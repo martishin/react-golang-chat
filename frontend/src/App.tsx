@@ -14,7 +14,7 @@ function App() {
   }
 
   return (
-    <div className="container relative mx-auto mt-8 h-[80vh] border border-gray-300">
+    <div className="container relative mx-auto mt-8 h-[80vh] rounded-lg border border-gray-300">
       <Header />
       <div className="absolute bottom-0 right-0 mb-[-4rem] mt-4 flex w-full justify-center">
         <input
@@ -23,7 +23,7 @@ function App() {
           placeholder="Type a message"
         />
         <button
-          className="bg-blue-600 px-8 py-2.5 text-sm font-medium text-white hover:bg-blue-800"
+          className="rounded-lg bg-blue-600 px-8 py-2.5 text-sm font-medium text-white hover:bg-blue-800"
           onClick={send}
         >
           Hit
