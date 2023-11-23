@@ -1,0 +1,37 @@
+.DS_STORE
+.DS_Store
+
+# IntelliJ IDEA
+*.iws
+*.iml
+*.ipr
+.idea
+out/
+
+# Vim
+*.un~
+
+# Logs
+*.log*
+
+# Exclude specific directories
+/**/node_modules/
+/**/dist/
+/**/build/
+/**/node/
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Go workspace file
+go.work
