@@ -2,13 +2,17 @@ package websocket
 
 import (
 	"log"
-
-	"github.com/gorilla/websocket"
 )
+
+type Connection interface {
+	WriteJSON(v interface{}) error
+	ReadMessage() (messageType int, p []byte, err error)
+	Close() error
+}
 
 type Client struct {
 	ID   string
-	Conn *websocket.Conn
+	Conn Connection
 	Pool *Pool
 }
 
