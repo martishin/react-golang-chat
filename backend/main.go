@@ -1,68 +1,45 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
+	"react-go-chat/pkg/websocket"
 	"time"
-
-	"github.com/gorilla/websocket"
 )
 
 const (
 	readHeaderTimeoutSeconds = 3
-	readBufferSize           = 1024
-	writeBufferSize          = 1024
 )
 
-func reader(conn *websocket.Conn) {
-	for {
-		messageType, p, err := conn.ReadMessage()
-		if err != nil {
-			log.Println(err)
-			return
-		}
-
-		log.Println(string(p))
-
-		if writeErr := conn.WriteMessage(messageType, p); writeErr != nil {
-			log.Println(writeErr)
-			return
-		}
-	}
-}
-
-func serveWs(w http.ResponseWriter, r *http.Request) {
-	log.Println(r.Host)
-
-	upgrader := websocket.Upgrader{
-		ReadBufferSize:  readBufferSize,
-		WriteBufferSize: writeBufferSize,
-
-		CheckOrigin: func(r *http.Request) bool { return true },
-	}
-
-	ws, err := upgrader.Upgrade(w, r, nil)
+func serveWs(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
+	log.Println("WebSocket endpoint hit")
+	ws, err := websocket.Upgrade(w, r)
 	if err != nil {
-		log.Println(err)
+		log.Printf("WebSocket upgrade error: %+v\n", err)
+		http.Error(w, "Could not upgrade to WebSocket", http.StatusInternalServerError)
+		return
 	}
 
-	reader(ws)
+	client := &websocket.Client{
+		Conn: ws,
+		Pool: pool,
+	}
+
+	pool.Register <- client
+	client.Read()
 }
 
 func setupRoutes() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := fmt.Fprintf(w, "Simple Server")
-		if err != nil {
-			log.Printf("Error writing response: %v", err)
-			return
-		}
-	})
+	pool := websocket.NewPool()
+	go pool.Start()
 
-	http.HandleFunc("/ws", serveWs)
+	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
+		serveWs(pool, w, r)
+	})
 }
 
 func main() {
+	log.Println("Distributed Chat App v0.01")
 	setupRoutes()
 
 	server := &http.Server{

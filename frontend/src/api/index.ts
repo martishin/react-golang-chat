@@ -8,7 +8,6 @@ const connect = (cb: (msg: string) => void) => {
   }
 
   socket.onmessage = (msg) => {
-    console.log(msg)
     cb(msg.data)
   }
 
@@ -22,7 +21,6 @@ const connect = (cb: (msg: string) => void) => {
 }
 
 const sendMsg = (msg: string) => {
-  console.log("sending msg: ", msg)
   socket.send(msg)
 }
 
