@@ -4,11 +4,11 @@ Real-time chat application using React.js, Go and WebSocket protocol
 
 ## 🚀 Running Locally
 ### Server
-* Navigate to `backend` folder
+* Navigate to the `backend` folder
 * Install dependencies: `go mod download`
 * Start the server: `go run main.go`
 ### Client 
-* Navigate to `frontend` folder
+* Navigate to the `frontend` folder
 * Install dependencies `npm install`
 * Start the server: `npm run dev` 
 
