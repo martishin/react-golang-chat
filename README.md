@@ -21,3 +21,4 @@ Real-time chat application using React.js, Go and WebSocket protocol
 * [React.js](https://react.dev/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Jest](https://jestjs.io/)
+* [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
