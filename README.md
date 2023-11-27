@@ -1,5 +1,5 @@
 # React Go Chat
-Real-time chat application using React.js, Go and WebSocket protocol
+Real-time chat application using React.js, Golang and WebSocket protocol
 <img src="https://github.com/ttymonkey/react-go-chat/blob/main/demo.gif" width="600"/>
 
 ## 🚀 Running Locally
