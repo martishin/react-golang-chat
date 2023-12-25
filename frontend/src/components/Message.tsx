@@ -15,7 +15,7 @@ export default function Message({ message }: MessageProps): ReactNode {
         ) : (
           <p className="text-lg text-gray-600">{parsedMessage.body}</p>
         )}
-        <hr className="mt-1 border-gray-900/10" />
+        <hr className="mt-1 border-indigo-200" />
       </div>
     </div>
   )

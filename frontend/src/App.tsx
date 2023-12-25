@@ -27,7 +27,7 @@ function App(): ReactNode {
   }
 
   return (
-    <div className="relative mx-auto mt-8 h-[80vh] max-w-2xl rounded-lg border border-gray-300">
+    <div className="relative mx-auto mt-8 h-[80vh] max-w-2xl rounded-lg border border-indigo-200 bg-white">
       <Header />
       <ChatHistory messages={chatHistory} />
       <Input message={message} setMessage={setMessage} send={send} />
