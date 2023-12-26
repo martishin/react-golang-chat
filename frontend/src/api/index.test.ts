@@ -1,3 +1,7 @@
+jest.mock("./config", () => ({
+  getWsApiUrl: () => "ws://mockurl",
+}))
+
 describe("WebSocket API", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockWebSocket: any
@@ -34,7 +38,7 @@ describe("WebSocket API", () => {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const { connect } = require("./index")
       connect(() => {})
-      expect(global.WebSocket).toHaveBeenCalledWith("ws://localhost:8080/ws")
+      expect(global.WebSocket).toHaveBeenCalledWith("ws://mockurl")
     })
   })
 

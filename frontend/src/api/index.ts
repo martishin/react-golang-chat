@@ -1,4 +1,7 @@
-const socket = new WebSocket("ws://localhost:8080/ws")
+import { getWsApiUrl } from "./config"
+
+const wsApiUrl = getWsApiUrl()
+const socket = new WebSocket(wsApiUrl)
 
 const connect = (cb: (msg: string) => void) => {
   console.log("Attempting Connection...")
