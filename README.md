@@ -11,7 +11,12 @@ You can check the live version [here](https://chat.martishin.com/)!
 ### Client 
 * Navigate to the `frontend` folder
 * Install dependencies `npm install`
-* Start the server: `npm run dev` 
+* Start the server: `npm run dev`
+
+## Features 
+* User registration
+* Real-time messaging between users
+* Messages include autor username
 
 ## Technologies Used
 * [Go](https://go.dev/)
