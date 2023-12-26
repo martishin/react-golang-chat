@@ -16,20 +16,27 @@ export default function ChatHistory({ username, messages }: ChatHistoryProps): R
   }
 
   useEffect(scrollToBottom, [messages])
+  const filteredMessages = messages
+    .map((message) => JSON.parse(message))
+    .filter((parsedMessage) => parsedMessage.type !== 2)
 
   return (
     <div className="flex-grow overflow-y-auto">
-      {messages.map((messageString, idx) => {
-        const parsedMessage = JSON.parse(messageString)
-        if (parsedMessage.type == 2) {
-          return null
-        }
+      {filteredMessages.map((filteredMessage, idx) => {
+        const parsedBody = JSON.parse(filteredMessage.body)
 
-        const parsedBody = JSON.parse(parsedMessage.body)
+        const message = new Message(filteredMessage.type, parsedBody.message, parsedBody.username)
+        const isLastMessage = idx === filteredMessages.length - 1
+        console.log(idx, filteredMessages.length - 1)
 
-        const message = new Message(parsedMessage.type, parsedBody.message, parsedBody.username)
-
-        return <MessageComponent key={idx} username={username} message={message} />
+        return (
+          <MessageComponent
+            key={idx}
+            username={username}
+            message={message}
+            isLastMessage={isLastMessage}
+          />
+        )
       })}
       <div ref={messagesEndRef} />
     </div>
