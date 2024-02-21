@@ -1,0 +1,22 @@
+version: '3'
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - '8080'
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    expose:
+      - '80'
+    depends_on:
+      - backend

@@ -11,4 +11,4 @@ FROM alpine:3.18
 WORKDIR /app
 COPY --from=builder /app/backend /app/backend
 EXPOSE 8080
-CMD ["/app/backend"]
+ENTRYPOINT ["/app/backend"]
