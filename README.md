@@ -4,6 +4,7 @@ You can check the live version [here](https://chat.martishin.com/)!
 
 <img src="https://github.com/ttymonkey/react-go-chat/blob/main/demo.gif" width="600"/>
 
+
 ## Running Locally
 ### Server
 * Navigate to the `backend` folder
@@ -14,10 +15,12 @@ You can check the live version [here](https://chat.martishin.com/)!
 * Install dependencies `npm install`
 * Start the server: `npm run dev`
 
+
 ## Features 
 * User registration
 * Real-time messaging between users
 * Messages include autor username
+
 
 ## Technologies Used
 * [Go](https://go.dev/)
@@ -29,3 +32,5 @@ You can check the live version [here](https://chat.martishin.com/)!
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Jest](https://jestjs.io/)
 * [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+ some test fix finally7
+
