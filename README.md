@@ -1,5 +1,5 @@
 # React Go Chat
-Real-time chat application with user authentication, built using React.js, Go and WebSocket protocol. 
+Real-time chat application with user authentication. Built using React.js, Go and WebSocket protocol.  
 You can check the live version [here](https://chat.martishin.com/)!    
 
 <img src="https://github.com/ttymonkey/react-go-chat/blob/main/demo.gif" width="600"/>
