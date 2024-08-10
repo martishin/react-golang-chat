@@ -2,7 +2,7 @@
 Real-time chat application with user authentication. Built using React.js, Go and WebSocket protocol.  
 You can check the live version [here](https://chat.martishin.com/)!    
 
-<img src="https://github.com/martishin/react-golang-chat/blob/main/demo.gif" width="600"/>
+<img src="https://github.com/martishin/react-golang-chat/blob/main/demo.gif" width="800"/>
 
 ## Running Locally
 ### Server
