@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"react-go-chat/pkg/websocket"
+	"react-go-chat/internal/websocket"
 	"time"
 )
 
@@ -39,7 +39,7 @@ func setupRoutes() {
 }
 
 func main() {
-	log.Println("Distributed Chat App v0.01")
+	log.Println("Realtime Chat App v0.01")
 	setupRoutes()
 
 	server := &http.Server{

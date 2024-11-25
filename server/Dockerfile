@@ -4,11 +4,11 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . ./
-RUN GOOS=linux go build -o backend
+RUN GOOS=linux go build -o server
 
 # Final stage
 FROM alpine:3.18
 WORKDIR /app
-COPY --from=builder /app/backend /app/backend
+COPY --from=builder /app/server /app/server
 EXPOSE 8080
-CMD ["/app/backend"]
+CMD ["/app/server"]

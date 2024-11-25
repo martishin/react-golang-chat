@@ -6,11 +6,11 @@ You can check the live version [here](https://chat.martishin.com/)!
 
 ## Running Locally
 ### Server
-* Navigate to the `backend` folder
+* Navigate to the `server` folder
 * Install dependencies: `go mod download`
 * Start the server: `go run main.go`
 ### Client 
-* Navigate to the `frontend` folder
+* Navigate to the `client` folder
 * Install dependencies `npm install`
 * Start the server: `npm run dev`
 

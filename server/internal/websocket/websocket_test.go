@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"net/http"
 	"net/http/httptest"
-	"react-go-chat/pkg/websocket"
+	"react-go-chat/internal/websocket"
 	"testing"
 )
 

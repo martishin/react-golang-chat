@@ -1,7 +1,7 @@
 package websocket_test
 
 import (
-	"react-go-chat/pkg/websocket"
+	"react-go-chat/internal/websocket"
 	"reflect"
 	"sync"
 	"testing"
