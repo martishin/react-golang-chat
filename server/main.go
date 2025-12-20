@@ -36,6 +36,9 @@ func setupRoutes() {
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(pool, w, r)
 	})
+	http.HandleFunc("/health", func(w http.ResponseWriter, _ *http.Request) {
+		w.Write([]byte(`{"status":"ok"}`))
+	})
 }
 
 func main() {
